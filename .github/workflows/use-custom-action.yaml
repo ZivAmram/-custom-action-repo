@@ -27,7 +27,7 @@ jobs:
       - name: docker push
         run: |
           docker tag zivamram/custom-action:latest zivamram/custom-action:${{ github.run_id }}
-          docker push zivamram/custum-action:${{ github.run_id }}
+          docker push zivamram/custom-action:${{ github.run_id }}
       - name: Send Slack notification on failure
         if: ${{ failure() }}
         uses: rtCamp/action-slack-notify@v2
