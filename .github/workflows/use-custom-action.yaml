@@ -1,4 +1,4 @@
-name: Custom Action Workflow
+name: Custom Action Workflows
 
 on:
   push:
