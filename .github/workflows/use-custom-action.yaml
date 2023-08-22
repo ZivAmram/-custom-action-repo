@@ -26,5 +26,5 @@ jobs:
         run: docker run -p 5000:5000 zivamram/custom-action:latest
       - name: docker push
         run: |
-          docker tag zivamram/custum-action zivamram/custom-action:${{ github.run_id }}
+          docker tag zivamram/custom-action:latest zivamram/custom-action:${{ github.run_id }}
           docker push zivamram/custom-action:${{ github.run_id }}
