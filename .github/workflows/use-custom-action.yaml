@@ -30,6 +30,14 @@ jobs:
           docker push zivamram/custom-action:${{ github.run_id }}
       - name: Send Slack notification on failure
         if: ${{ success() }}
-        uses: rtCamp/action-slack-notify@v2.2.0
+        id: slack
+        uses: slackapi/slack-github-action@v1.24.0
+        with:
+          # This data can be any valid JSON from a previous step in the GitHub Action
+          payload: |
+            {
+              "key": "value",
+              "foo": "bar"
+            }
         env:
-          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_URL }}
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
